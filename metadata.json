@@ -1,0 +1,6 @@
+{
+  "name": "IR25 Innovation Hub - Sinh Viên QHQT TDMU",
+  "description": "Cổng thông tin IR25 Innovation Hub - Sinh viên Quan hệ Quốc tế Trường Đại học Thủ Dầu Một (TDMU) trong Hệ sinh thái Khởi nghiệp Đổi mới Sáng tạo Quốc gia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

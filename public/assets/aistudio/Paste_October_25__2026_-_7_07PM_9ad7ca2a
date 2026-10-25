@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR25 Innovation Hub - Sinh Viên QHQT Trong Hệ Sinh Thái Khởi Nghiệp</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Be Vietnam Pro & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f9',
+                            100: '#dbe4f0',
+                            800: '#14274e',
+                            900: '#0f2c59',
+                            950: '#0a1d3c',
+                        },
+                        gold: {
+                            400: '#e0c158',
+                            500: '#d4af37',
+                            600: '#c5a059',
+                            700: '#b8860b',
+                        },
+                        vnred: '#da251d'
+                    },
+                    fontFamily: {
+                        sans: ['Be Vietnam Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Vietnam Poster Elegance Background Accents */
+        .bg-poster-pattern {
+            background-color: #ffffff;
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(218, 37, 29, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 100% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 35%),
+                radial-gradient(circle at 100% 100%, rgba(15, 44, 89, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 0% 100%, rgba(15, 44, 89, 0.04) 0%, transparent 40%);
+        }
+
+        .wave-top-banner {
+            background: linear-gradient(135deg, rgba(15,44,89,0.03) 0%, rgba(212,175,55,0.08) 100%);
+        }
+
+        .card-glow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-glow:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(15, 44, 89, 0.12), 0 4px 6px -2px rgba(212, 175, 55, 0.1);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-poster-pattern min-h-screen flex flex-col antialiased selection:bg-gold-500 selection:text-white pb-20">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- LOGO SVG REPRESENTATION -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="relative flex flex-col items-start justify-center">
+                        <div class="flex items-baseline space-x-1">
+                            <!-- Custom IR25 Styling -->
+                            <div class="relative font-extrabold text-2xl sm:text-3xl tracking-tighter text-navy-900 flex items-center">
+                                <span class="relative">
+                                    I
+                                    <!-- Gold Star on top of I -->
+                                    <svg class="w-3.5 h-3.5 text-gold-500 absolute -top-3 left-1/2 -translate-x-1/2 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </span>
+                                <span>R</span>
+                                <!-- Red Wave Swoosh under R -->
+                                <span class="relative text-navy-900">
+                                    25
+                                    <span class="absolute -bottom-1 left-0 w-full h-1 bg-vnred rounded-full opacity-80 transform -skew-x-12"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] text-navy-800 uppercase mt-0.5">INNOVATION HUB</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                    <a href="#overview" class="hover:text-navy-900 transition-colors">Tổng Quan</a>
+                    <a href="#policies" class="hover:text-navy-900 transition-colors">Chính Sách</a>
+                    <a href="#startup-status" class="hover:text-navy-900 transition-colors">Sức Hút Startup</a>
+                    <a href="#ir-advantages" class="hover:text-navy-900 transition-colors">Sinh Viên QHQT</a>
+                    <a href="#student-ideas" class="hover:text-navy-900 transition-colors">12 Ý Tưởng</a>
+                    <a href="#booth-showcase" class="hover:text-navy-900 transition-colors">Gian Hàng IR25</a>
+                    <a href="#conclusion" class="hover:text-navy-900 transition-colors">Tổng Kết</a>
+                </nav>
+
+                <!-- Action Button & Mobile Menu Toggle -->
+                <div class="flex items-center space-x-3">
+                    <button onclick="openFeedbackModal()" class="hidden sm:inline-flex items-center space-x-2 bg-navy-900 text-white hover:bg-navy-800 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold shadow-md transition-all hover:shadow-lg border border-gold-500/30">
+                        <i class="fa-regular fa-comment-dots text-gold-400"></i>
+                        <span>Đóng Góp Ý Kiến</span>
+                    </button>
+                    <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-navy-900 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#overview" class="block py-2 text-slate-700 hover:text-navy-900 font-medium border-b border-slate-50" onclick="toggleMobileMenu()">Tổng Quan Hệ Sinh Thái</a>
+            <a href="#policies" class="block py-2 text-slate-700 hover:text-navy-900 font-medium border-b border-slate-50" onclick="toggleMobileMenu()">Đề Án & Chính Sách</a>
+            <a href="#startup-status" class="block py-2 text-slate-700 hover:text-navy-900 font-medium border-b border-slate-50" onclick="toggleMobileMenu()">Sức Hút Đầu Tư</a>
+            <a href="#ir-advantages" class="block py-2 text-slate-700 hover:text-navy-900 font-medium border-b border-slate-50" onclick="toggleMobileMenu()">Lợi Thế Sinh Viên QHQT</a>
+            <a href="#student-ideas" class="block py-2 text-slate-700 hover:text-navy-900 font-medium border-b border-slate-50" onclick="toggleMobileMenu()">12 Ý Tưởng Khởi Nghiệp</a>
+            <a href="#booth-showcase" class="block py-2 text-slate-700 hover:text-navy-900 font-medium border-b border-slate-50" onclick="toggleMobileMenu()">Sản Phẩm Gian Hàng IR25</a>
+            <a href="#conclusion" class="block py-2 text-slate-700 hover:text-navy-900 font-medium border-b border-slate-50" onclick="toggleMobileMenu()">Tổng Kết</a>
+            <div class="pt-2">
+                <button onclick="openFeedbackModal(); toggleMobileMenu();" class="w-full bg-navy-900 text-white py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center space-x-2">
+                    <i class="fa-regular fa-comment-dots text-gold-400"></i>
+                    <span>Đóng Góp Ý Kiến</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative overflow-hidden py-12 lg:py-20 border-b border-slate-100">
+            <!-- Decorative SVG Waves Accent -->
+            <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+                <svg class="absolute -bottom-10 left-0 w-full text-navy-900/10" viewBox="0 0 1440 220" fill="none">
+                    <path fill="currentColor" d="M0,128L48,149.3C96,171,192,213,288,202.7C384,192,480,128,576,117.3C672,107,768,149,864,165.3C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,220L1392,220C1344,220,1248,220,1152,220C1056,220,960,220,864,220C768,220,672,220,576,220C480,220,384,220,288,220C192,220,96,220,48,220L0,220Z"></path>
+                </svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-4xl mx-auto space-y-6">
+                    <!-- Badges -->
+                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-navy-900/5 via-gold-500/10 to-vnred/5 border border-gold-500/30 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-navy-900">
+                        <span class="w-2 h-2 rounded-full bg-vnred animate-pulse"></span>
+                        <span>Trường Đại học Thủ Dầu Một (TDMU) - Lớp D25QHQT02</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-navy-900 tracking-tight leading-tight">
+                        IR25 INNOVATION HUB
+                    </h1>
+                    <p class="text-lg sm:text-2xl font-bold text-gold-700">
+                        Sinh viên Quan hệ Quốc tế trong Hệ sinh thái Khởi nghiệp Đổi mới Sáng tạo Quốc gia
+                    </p>
+
+                    <!-- Quote Tagline Banner -->
+                    <div class="p-4 sm:p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-gold-500/20 shadow-md max-w-2xl mx-auto relative overflow-hidden">
+                        <div class="absolute -left-2 top-0 bottom-0 w-2 bg-gold-500"></div>
+                        <p class="italic text-base sm:text-lg font-semibold text-slate-700">
+                            "Từ những ý tưởng nhỏ – Kiến tạo giá trị lớn"
+                        </p>
+                    </div>
+
+                    <!-- Intro summary text -->
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+                        Khám phá hành trình chuyển đổi từ tư duy "Lập thân, Lập nghiệp" sang "Quốc gia Khởi nghiệp Đổi mới Sáng tạo". Nơi tri thức ngoại giao, tư duy toàn cầu và năng lực kết nối của sinh viên Quan hệ Quốc tế trở thành động lực phát triển dự án thực chiến.
+                    </p>
+
+                    <!-- Quick Buttons -->
+                    <div class="pt-4 flex flex-wrap justify-center gap-4">
+                        <a href="#booth-showcase" class="bg-navy-900 hover:bg-navy-800 text-white font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all border border-gold-500/40 flex items-center space-x-2 text-sm sm:text-base">
+                            <i class="fa-solid fa-store text-gold-400"></i>
+                            <span>Khám Phá Gian Hàng</span>
+                        </a>
+                        <a href="#student-ideas" class="bg-white hover:bg-slate-50 text-navy-900 font-bold px-6 py-3 rounded-xl shadow-md border border-slate-200 hover:border-gold-500 transition-all flex items-center space-x-2 text-sm sm:text-base">
+                            <i class="fa-solid fa-lightbulb text-gold-600"></i>
+                            <span>12 Ý Tưởng Sinh Viên</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: KHỞI NGHIỆP TRONG KỶ NGUYÊN HỘI NHẬP TOÀN CẦU -->
+        <section id="overview" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-100">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg shadow">1</div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-navy-900">Khởi Nghiệp Trong Kỷ Nguyên Hội Nhập Toàn Cầu</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Main Narrative -->
+                <div class="lg:col-span-7 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
+                        <p>
+                            Giai đoạn 2000–2015 với khẩu hiệu <strong class="text-navy-900">“Lập thân, Lập nghiệp”</strong> đã đặt mục tiêu khuyến khích mở cửa hàng, doanh nghiệp vừa và nhỏ (SME). Đến năm <strong class="text-navy-900">2016 – "Năm Quốc gia Khởi nghiệp"</strong>, Việt Nam ghi nhận bước chuyển mình ngoạn mục: chuyển dịch từ kinh doanh truyền thống nhỏ lẻ sang <span class="text-gold-700 font-semibold">Khởi nghiệp Đổi mới Sáng tạo (ĐMST)</span>.
+                        </p>
+                        <p>
+                            Học hỏi kinh nghiệm từ các quốc gia tiên phong như Israel và Singapore, Việt Nam kết hợp bản lĩnh đổi mới của người dân với hệ sinh thái liên kết chặt chẽ dưới sự dẫn dắt chiến lược của Nhà nước. Khởi nghiệp ngày nay đòi hỏi tư duy chiến lược mang tầm quốc tế, năng lực thích ứng linh hoạt trước biến động địa chính trị – kinh tế toàn cầu.
+                        </p>
+                    </div>
+
+                    <div class="p-4 bg-navy-50 rounded-xl border-l-4 border-navy-900 text-xs sm:text-sm text-navy-900 font-medium">
+                        <i class="fa-solid fa-quote-left text-gold-600 mr-2"></i>
+                        Khởi nghiệp không còn là hoạt động riêng lẻ mà là bài toán phát triển toàn diện hệ sinh thái: Thể chế - Vốn - Tri thức - Con người - Bền vững.
+                    </div>
+                </div>
+
+                <!-- Highlight Card: TECHFEST 12/2025 -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-navy-900 to-navy-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden flex flex-col justify-between border border-gold-500/30">
+                    <div class="absolute -right-10 -bottom-10 opacity-10 text-white">
+                        <i class="fa-solid fa-rocket text-9xl"></i>
+                    </div>
+
+                    <div>
+                        <div class="inline-flex items-center space-x-2 bg-gold-500/20 border border-gold-500/40 px-3 py-1 rounded-full text-xs text-gold-400 font-semibold mb-4">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Cột Mốc TECHFEST 12/2025</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4 text-white">Bức Tranh Hệ Sinh Thái ĐMST Việt Nam</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 text-center">
+                                <div class="text-3xl font-black text-gold-400">4,000+</div>
+                                <div class="text-xs text-slate-300 mt-1">Startup đang hoạt động</div>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 text-center">
+                                <div class="text-3xl font-black text-gold-400">02</div>
+                                <div class="text-xs text-slate-300 mt-1">Doanh nghiệp Kỳ Lân</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-xs text-slate-300 border-t border-white/10 pt-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-check text-gold-400"></i>
+                            <span>Định hướng phát triển chiều sâu & bền vững</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-check text-gold-400"></i>
+                            <span>Thúc đẩy thương mại hóa kết quả nghiên cứu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CÁC ĐỀ ÁN, NGHỊ QUYẾT & CHÍNH SÁCH TIÊU BIỂU -->
+        <section id="policies" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-100">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg shadow">2</div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-navy-900">Đề Án, Nghị Quyết & Chính Sách Tiêu Biểu</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">Nền tảng pháp lý và định hướng chiến lược quốc gia hỗ trợ ĐMST</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Policy 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 card-glow flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-navy-50 text-navy-900 flex items-center justify-center font-bold mb-4 border border-navy-100">
+                            <i class="fa-solid fa-file-contract text-lg text-gold-600"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gold-700 tracking-wider uppercase">Đề Án Bản lề</span>
+                        <h3 class="text-base font-bold text-navy-900 mt-1 mb-2">Quyết Đinh 844/QĐ-TTg</h3>
+                        <p class="text-xs text-slate-500 mb-3">(18/05/2016)</p>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Thúc đẩy hệ sinh thái khởi nghiệp ĐMST đến năm 2025. Hỗ trợ phát triển ý tưởng, kết nối nhà đầu tư, đào tạo kiến thức và tiếp cận thị trường.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Policy 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 card-glow flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-navy-50 text-navy-900 flex items-center justify-center font-bold mb-4 border border-navy-100">
+                            <i class="fa-solid fa-scale-balanced text-lg text-gold-600"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gold-700 tracking-wider uppercase">Khung Pháp Lý</span>
+                        <h3 class="text-base font-bold text-navy-900 mt-1 mb-2">Luật Hỗ Trợ SME</h3>
+                        <p class="text-xs text-slate-500 mb-3">Luật số 04/2017/QH14 (12/06/2017)</p>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Cơ sở pháp lý hỗ trợ tư vấn, đào tạo, thông tin, phát triển nguồn nhân lực, công nghệ và tiếp cận các nguồn lực cho startup sáng tạo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Policy 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 card-glow flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-navy-50 text-navy-900 flex items-center justify-center font-bold mb-4 border border-navy-100">
+                            <i class="fa-solid fa-microchip text-lg text-gold-600"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gold-700 tracking-wider uppercase">Đột Phá KH-CN & Chuyển Đổi Số</span>
+                        <h3 class="text-base font-bold text-navy-900 mt-1 mb-2">Nghị Quyết 57-NQ/TW</h3>
+                        <p class="text-xs text-slate-500 mb-3">(22/12/2024) & NQ 03/NQ-CP (09/01/2025)</p>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Xác định KH-CN, ĐMST và chuyển đổi số là động lực then chốt. Khuyến khích ứng dụng công nghệ, thương mại hóa nghiên cứu.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Policy 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 card-glow flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-navy-50 text-navy-900 flex items-center justify-center font-bold mb-4 border border-navy-100">
+                            <i class="fa-solid fa-briefcase text-lg text-gold-600"></i>
+                        </div>
+                        <span class="text-xs font-bold text-gold-700 tracking-wider uppercase">Kinh Tế Tư Nhân</span>
+                        <h3 class="text-base font-bold text-navy-900 mt-1 mb-2">Nghị Quyết 68-NQ/TW</h3>
+                        <p class="text-xs text-slate-500 mb-3">(04/05/2025)</p>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Nhấn mạnh vai trò kinh tế tư nhân, cải thiện môi trường kinh doanh, tạo điều kiện tiếp cận nguồn lực và nâng cao năng lực cạnh tranh.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SỨC HÚT ĐẦU TƯ & VỊ THẾ STARTUP VIỆT NAM -->
+        <section id="startup-status" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-100">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg shadow">3</div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-navy-900">Sức Hút Đầu Tư & Vị Thế Startup Việt Nam</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">Theo Báo cáo Start-up Asia của Tổ chức OECD</p>
+                </div>
+            </div>
+
+            <!-- OECD Rankings Banner -->
+            <div class="bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 text-white rounded-2xl p-6 sm:p-8 mb-8 shadow-md relative overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-gold-400 font-bold">Thống kê OECD (2020 - 2022)</span>
+                        <h3 class="text-xl sm:text-2xl font-bold mt-1 mb-3 text-white">Xếp Hạng Startup Trong Khu Vực Đông Nam Á</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Việt Nam trở thành điểm sáng thu hút dòng vốn mạo hiểm nhờ tốc độ tăng trưởng kinh tế số cao và lực lượng lao động công nghệ trẻ dồi dào.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl text-center border border-white/10">
+                            <span class="text-xs text-slate-300 block">Vốn Đầu Tư Mạo Hiểm</span>
+                            <span class="text-2xl sm:text-3xl font-black text-gold-400">Hạng 3</span>
+                            <span class="text-[10px] text-slate-400 block mt-1">Đông Nam Á</span>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl text-center border border-white/10">
+                            <span class="text-xs text-slate-300 block">Số Lượng Startup</span>
+                            <span class="text-2xl sm:text-3xl font-black text-gold-400">Hạng 4</span>
+                            <span class="text-[10px] text-slate-400 block mt-1">Đông Nam Á</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Sectors -->
+            <h3 class="text-lg font-bold text-navy-900 mb-4 flex items-center space-x-2">
+                <i class="fa-solid fa-layer-group text-gold-600"></i>
+                <span>Các Lĩnh Vực Đổi Mới Sáng Tạo Nổi Bật</span>
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Fintech -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 card-glow">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full">Tiêu Điểm Hàng Đầu</span>
+                    </div>
+                    <h4 class="text-base font-bold text-navy-900 mb-2">Fintech - Công Nghệ Tài Chính</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                        Phát triển ví điện tử, thanh toán số và dịch vụ tài chính trực tuyến. Nhu cầu bùng nổ từ người dùng cá nhân lẫn doanh nghiệp.
+                    </p>
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-500">Đại diện tiêu biểu:</span>
+                        <span class="font-bold text-indigo-900 bg-indigo-50 px-2 py-0.5 rounded">MoMo</span>
+                    </div>
+                </div>
+
+                <!-- E-Commerce -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 card-glow">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-amber-50 text-amber-700 rounded-full">Tăng Trưởng Nhanh</span>
+                    </div>
+                    <h4 class="text-base font-bold text-navy-900 mb-2">Thương Mại Điện Tử</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                        Xây dựng nền tảng mua bán trực tuyến kết nối người bán và người tiêu dùng, tích hợp giao dịch số tiện lợi.
+                    </p>
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-500">Đại diện tiêu biểu:</span>
+                        <span class="font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded">Tiki, Sendo</span>
+                    </div>
+                </div>
+
+                <!-- EdTech -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 card-glow">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full">Tiềm Năng Lớn</span>
+                    </div>
+                    <h4 class="text-base font-bold text-navy-900 mb-2">EdTech - Công Nghệ Giáo Dục</h4>
+                    <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                        Ứng dụng học trực tuyến, học ngoại ngữ tích hợp công nghệ AI và nền tảng học liệu số hóa thông minh.
+                    </p>
+                    <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <span class="text-slate-500">Đại diện tiên phong:</span>
+                        <span class="font-bold text-emerald-900 bg-emerald-50 px-2 py-0.5 rounded">Topica</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: BỨC TRANH SINH VIÊN VIỆT NAM KHỞI NGHIỆP -->
+        <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-100">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg shadow">4</div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-navy-900">Bức Tranh Sinh Viên Việt Nam Khởi Nghiệp</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">Thống kê 7 năm triển khai Đề án 1665 (Đến Ngày hội SV-Startup 2025)</p>
+                </div>
+            </div>
+
+            <!-- Stats Bar Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-navy-900">42,000+</div>
+                    <div class="text-xs text-slate-500 mt-1 font-medium">Dự án khởi nghiệp được hình thành</div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-gold-600">3,500+</div>
+                    <div class="text-xs text-slate-500 mt-1 font-medium">Cuộc thi ý tưởng sáng tạo</div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-navy-900">480,000+</div>
+                    <div class="text-xs text-slate-500 mt-1 font-medium">Lượt thanh niên tham gia</div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-gold-600">23,000+</div>
+                    <div class="text-xs text-slate-500 mt-1 font-medium">Ý tưởng dự án ghi nhận</div>
+                </div>
+            </div>
+
+            <!-- 3 Traits & Featured Project Card -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-7 space-y-4">
+                    <h3 class="text-base sm:text-lg font-bold text-navy-900 mb-3">3 Đặc Điểm Nổi Bật Của Sinh Viên Khởi Nghiệp</h3>
+
+                    <div class="bg-white rounded-xl p-4 border border-slate-200 flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-gold-50 text-gold-700 flex items-center justify-center font-bold flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-navy-900">Năng động & Sáng tạo</h4>
+                            <p class="text-xs text-slate-600 mt-0.5">Phát triển ý tưởng từ cuộc thi, nghiên cứu khoa học, CLB và vườn ươm đại học.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 border border-slate-200 flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-gold-50 text-gold-700 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-navy-900">Nhạy bén với công nghệ</h4>
+                            <p class="text-xs text-slate-600 mt-0.5">Ứng dụng nền tảng số, AI để nghiên cứu thị trường, thử nghiệm sản phẩm nhanh chóng.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-4 border border-slate-200 flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-gold-50 text-gold-700 flex items-center justify-center font-bold flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-navy-900">Tập trung giải quyết bài toán thực tế</h4>
+                            <p class="text-xs text-slate-600 mt-0.5">Hướng đến bảo vệ môi trường, giáo dục, tài chính cá nhân và sức khỏe cộng đồng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Case Study Card -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-emerald-900 to-teal-950 text-white rounded-2xl p-6 shadow-md border border-emerald-500/30">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] uppercase font-bold tracking-wider bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-full border border-emerald-400/30">Dự Án Sinh Viên Tiêu Biểu</span>
+                        <span class="text-xs text-emerald-200 font-semibold">SV-Startup 2024</span>
+                    </div>
+
+                    <h4 class="text-lg font-bold text-white mb-2">Dự án S2M – Da Từ Vỏ Xoài</h4>
+                    <p class="text-xs text-emerald-100 mb-3">
+                        Nhóm sinh viên Đại học Cần Thơ (Giải Khuyến khích Cuộc thi "Học sinh, sinh viên với ý tưởng khởi nghiệp" Lần thứ VI).
+                    </p>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        Tận dụng phế phụ phẩm nông nghiệp (vỏ xoài) sản xuất vật liệu da sinh học thân thiện môi trường, thay thế da động vật và nhựa PU/PVC. Giải pháp khởi nghiệp xanh đột phá ứng dụng công nghệ sinh học.
+                    </p>
+                    <div class="text-[11px] bg-white/10 p-2.5 rounded-lg text-emerald-200 font-medium">
+                        <i class="fa-solid fa-leaf mr-1 text-emerald-400"></i> Chứng minh tính khả thi thương mại & sự ghi nhận từ Bộ Giáo dục & Đào tạo.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: LỢI THẾ CỐT LÕI CỦA SINH VIÊN QUAN HỆ QUỐC TẾ (QHQT) -->
+        <section id="ir-advantages" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-100">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg shadow">5</div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-navy-900">Lợi Thế Cốt Lõi Của Sinh Viên Quan Hệ Quốc Tế</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">Nền tảng kiến thức đa ngành: Chính trị, Kinh tế quốc tế, Luật pháp & Văn hóa</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Pillar 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 card-glow relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-xl mb-4">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-navy-900 mb-2">1. Tư Duy Hệ Thống & Tầm Nhìn Toàn Cầu</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Khả năng nhìn nhận bài toán kinh doanh trong mối quan hệ đa chiều Quốc gia – Khu vực – Toàn cầu. Nắm bắt nhanh dịch chuyển dòng vốn, chuỗi cung ứng quốc tế và rủi ro địa chính trị.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 card-glow relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-xl mb-4">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-navy-900 mb-2">2. Giao Tiếp Đa Văn Hóa & Ngoại Giao Công Chúng</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Thành thạo ngoại ngữ, thấu hiểu tâm lý, tập quán pháp lý và văn hóa kinh doanh của các quốc gia khác nhau. Giảm thiểu rào cản khi vươn sản phẩm ra thị trường quốc tế.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 card-glow relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-xl mb-4">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-base font-bold text-navy-900 mb-2">3. Năng Lực Kết Nối Mạng Lưới Chiến Lược</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Tiếp cận nhanh với các tổ chức quốc tế, cơ quan ngoại giao đoàn, hiệp hội ngành hàng và quỹ đầu tư nước ngoài để tạo lập đối tác phát triển bền vững.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: ĐỊNH HƯỚNG TDMU & 12 Ý TƯỞNG SÁNG TẠO D25QHQT02 -->
+        <section id="student-ideas" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-100">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg shadow">6</div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-navy-900">Định Hướng Đào Tạo TDMU & 12 Ý Tưởng D25QHQT02</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">Học phần "Đổi mới sáng tạo khởi nghiệp (0+3)" - Trường Đại học Thủ Dầu Một</p>
+                </div>
+            </div>
+
+            <!-- Intro box -->
+            <div class="bg-navy-50 rounded-2xl p-6 border border-navy-100 mb-8">
+                <p class="text-xs sm:text-sm text-navy-900 leading-relaxed">
+                    Tại Trường Đại học Thủ Dầu Một (TDMU), sinh viên Quan hệ Quốc tế thực hành mô phỏng khởi nghiệp thực tế: xác định nỗi đau khách hàng, khảo sát thị trường, sàng lọc ý tưởng. Dưới đây là 12 dự án tiêu biểu từ sinh viên lớp <strong class="text-gold-700">D25QHQT02</strong>:
+                </p>
+            </div>
+
+            <!-- Interactive Filters for 12 Ideas -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                <div class="flex flex-wrap gap-2" id="categoryFilters">
+                    <button onclick="filterIdeas('all')" class="filter-btn active bg-navy-900 text-white px-3.5 py-1.5 rounded-xl text-xs font-semibold shadow-sm transition-all">Tất Cả (12)</button>
+                    <button onclick="filterIdeas('Quà tặng')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all">Quà Tặng</button>
+                    <button onclick="filterIdeas('Dịch vụ')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all">Dịch Vụ</button>
+                    <button onclick="filterIdeas('Sản phẩm gia dụng')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all">Gia Dụng</button>
+                    <button onclick="filterIdeas('Thiết bị hỗ trợ')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all">Thiết Bị</button>
+                    <button onclick="filterIdeas('Mỹ phẩm')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all">Mỹ Phẩm</button>
+                    <button onclick="filterIdeas('Thực phẩm')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all">Thực Phẩm</button>
+                    <button onclick="filterIdeas('Dịch vụ công nghệ')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all">Công Nghệ</button>
+                </div>
+
+                <!-- Search Input -->
+                <div class="relative w-full sm:w-64">
+                    <input type="text" id="searchIdeaInput" onkeyup="searchIdeas()" placeholder="Tìm ý tưởng, sản phẩm..." class="w-full pl-9 pr-4 py-1.5 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-navy-900 shadow-sm">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+                </div>
+            </div>
+
+            <!-- Cards Grid for Ideas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="ideasGrid">
+                <!-- Card 1: Lumivie -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Quà tặng">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-amber-50 text-amber-700 rounded-full uppercase">Quà tặng</span>
+                            <span class="text-xs font-extrabold text-navy-900">Lumivie</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Nến Thơm 2 Vòng Đời Lộ Danh Lam Việt Nam</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Nhu cầu nến thơm tái chế & quà tặng ngoại giao mang bản sắc Việt Nam tăng cao.</p>
+                            <p><strong>Idea:</strong> Khi sáp đậu nành cháy hết, mô hình danh lam thắng cảnh Việt Nam hiện ra thành đồ decor vĩnh viễn.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: L’Amour Florist -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Quà tặng">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-amber-50 text-amber-700 rounded-full uppercase">Quà tặng</span>
+                            <span class="text-xs font-extrabold text-navy-900">L’Amour Florist</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Hoa Khô Nghệ Thuật Lưu Giữ Kỷ Niệm</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Người mua muốn tặng hoa mang ý nghĩa lưu giữ dài lâu, không tàn nhanh.</p>
+                            <p><strong>Idea:</strong> Hoa khô chế tác thành quà tặng nghệ thuật (ép khung tranh, hũ thủy tinh) giữ màu bền lâu.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: 4Shells -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Quà tặng">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-amber-50 text-amber-700 rounded-full uppercase">Quà tặng</span>
+                            <span class="text-xs font-extrabold text-navy-900">4Shells</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Ốp Điện Thoại Cá Nhân Hóa & Xanh</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Thay đổi phong cách điện thoại liên tục với chi phí hợp lý.</p>
+                            <p><strong>Idea:</strong> Ốp điện thoại custom (in tên, vẽ tay, đính đá DIY) hoặc chất liệu thân thiện môi trường.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: 36 -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Quà tặng">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-amber-50 text-amber-700 rounded-full uppercase">Quà tặng</span>
+                            <span class="text-xs font-extrabold text-navy-900">36</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Mô Hình Lắp Ráp Kiến Trúc Việt Nam</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Nhu cầu đồ chơi lắp ghép rèn tư duy và xả stress gia tăng.</p>
+                            <p><strong>Idea:</strong> Mô hình lắp ráp kiến trúc Việt độc lạ, cung cấp dịch vụ cho thuê hoặc bán theo set.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Legends Never Die -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Quà tặng">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-amber-50 text-amber-700 rounded-full uppercase">Quà tặng</span>
+                            <span class="text-xs font-extrabold text-navy-900">Legends Never Die</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Bộ Kit Thủ Công All-In-One Làm Búp Bê</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Thích tự tay làm đồ handmade xả stress nhưng ngại chuẩn bị nguyên liệu lặt vặt.</p>
+                            <p><strong>Idea:</strong> Kit trọn gói gồm đầy đủ nguyên liệu + hướng dẫn chi tiết cho người mới bắt đầu.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Deadline Kit -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Dịch vụ">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full uppercase">Dịch vụ</span>
+                            <span class="text-xs font-extrabold text-navy-900">Deadline Kit</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Bộ Cứu Cánh Deadline Học Sinh Sinh Viên</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Trì hoãn, chạy deadline mệt mỏi, thiếu dụng cụ tập trung.</p>
+                            <p><strong>Idea:</strong> Túi tiện dụng tích hợp trà/cà phê tỉnh táo, planner mini, nến tập trung, đồ văn phòng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Vừa đi vừa sửa -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Dịch vụ">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full uppercase">Dịch vụ</span>
+                            <span class="text-xs font-extrabold text-navy-900">Vừa đi vừa sửa</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Trạm Chụp Ảnh Lấy Liền Theo Mùa</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Giới trẻ thích ghi lại khoảnh khắc ngẫu hứng có ảnh in ngay.</p>
+                            <p><strong>Idea:</strong> Booth chụp ảnh lấy liền decor theo sự kiện, khung ảnh độc quyền lưu giữ kỷ niệm.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Cocerola -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Sản phẩm gia dụng">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full uppercase">Gia dụng</span>
+                            <span class="text-xs font-extrabold text-navy-900">Cocerola</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Đồ Gia Dụng & Chậu Cây Từ Xơ Dừa</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Xu hướng sống xanh thay thế đồ nhựa bằng sản phẩm tự nhiên phân hủy sinh học.</p>
+                            <p><strong>Idea:</strong> Sản phẩm trang trí, chậu cây tái chế từ xơ dừa phong cách Green Living.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9: Michellin -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Sản phẩm gia dụng">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full uppercase">Gia dụng</span>
+                            <span class="text-xs font-extrabold text-navy-900">Michellin</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Xà Bông Thảo Mộc Bao Bì Origami</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Tìm kiếm sản phẩm tắm gội thảo mộc lành tính, hương thơm dịu nhẹ.</p>
+                            <p><strong>Idea:</strong> Xà bông thiên nhiên Việt Nam thiết kế bao bì Origami danh lam thắng cảnh thế giới decor độc đáo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10: Đồng hồ trẻ em thông minh -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Thiết bị hỗ trợ">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-purple-50 text-purple-700 rounded-full uppercase">Thiết bị</span>
+                            <span class="text-xs font-extrabold text-navy-900">Smart Watch Kid</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Đồng Hồ Thông Minh Định Vị GPS Trẻ Em</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Phụ huynh muốn định vị con; trẻ thích thiết bị rực rỡ bắt mắt.</p>
+                            <p><strong>Idea:</strong> Đồng hồ tích hợp GPS định vị, thiết kế an toàn, bắt mắt cho trẻ em.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 11: TigerScrub -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Mỹ phẩm">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-pink-50 text-pink-700 rounded-full uppercase">Mỹ phẩm</span>
+                            <span class="text-xs font-extrabold text-navy-900">TigerScrub</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Tẩy Tế Bào Chết Thuần Chay Cà Phê & Bơ Dừa</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Muốn tẩy da chết dịu nhẹ không trầy xước, giàu độ ẩm thiên nhiên.</p>
+                            <p><strong>Idea:</strong> Kết hợp hạt cà phê mịn + bơ dừa/bơ ca cao thuần chay làm mềm và sáng da tự nhiên.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 12: Tiệm 4 Chị Em -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Thực phẩm">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-red-50 text-red-700 rounded-full uppercase">Thực phẩm</span>
+                            <span class="text-xs font-extrabold text-navy-900">Tiệm 4 Chị Em</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Combo Sáng Bánh Mì + Cà Phê Siêu Tốc</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Giới trẻ & dân văn phòng cần bữa sáng nhanh - đủ chất - chuẩn vị.</p>
+                            <p><strong>Idea:</strong> Mô hình Combo Sáng đóng gói đẹp, giao hàng siêu nhanh cho người bận rộn.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 13: Foodsave -->
+                <div class="idea-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between" data-category="Dịch vụ công nghệ">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 bg-cyan-50 text-cyan-700 rounded-full uppercase">Công nghệ</span>
+                            <span class="text-xs font-extrabold text-navy-900">Foodsave</span>
+                        </div>
+                        <h4 class="text-base font-bold text-navy-900 mb-2">Nền Tảng Giải Cứu Thực Phẩm Dư Thừa</h4>
+                        <div class="space-y-2 text-xs text-slate-600">
+                            <p><strong>Insight:</strong> Khách muốn ăn ngon giá rẻ; quán ăn muốn giảm lãng phí đồ ăn cuối ngày.</p>
+                            <p><strong>Idea:</strong> App kết nối bán các suất ăn dư thừa chất lượng còn ngon giảm 50-70%.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: GIAN HÀNG SẢN PHẨM THỬ NGHIỆM IR25 INNOVATION HUB -->
+        <section id="booth-showcase" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-100">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-lg shadow">7</div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-navy-900">Sản Phẩm Gian Hàng "IR25 Innovation Hub"</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">Các dòng sản phẩm thực chiến trưng bày và phục vụ tại sự kiện</p>
+                </div>
+            </div>
+
+            <!-- Product Showcase Tab Controls -->
+            <div class="flex overflow-x-auto custom-scrollbar space-x-2 border-b border-slate-200 pb-2 mb-8">
+                <button onclick="switchProductTab('tiem4chiem')" id="tab-tiem4chiem" class="product-tab px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap bg-navy-900 text-white shadow-sm transition-all">
+                    1. Tiệm 4 Chị Em
+                </button>
+                <button onclick="switchProductTab('deadlinekit')" id="tab-deadlinekit" class="product-tab px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition-all">
+                    2. Deadline Kit (6 Dòng)
+                </button>
+                <button onclick="switchProductTab('ngocphithuy')" id="tab-ngocphithuy" class="product-tab px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition-all">
+                    3. Ngọc Phỉ Thúy Myanmar
+                </button>
+                <button onclick="switchProductTab('kimbap')" id="tab-kimbap" class="product-tab px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition-all">
+                    4. Gimbap Gạo Lứt x MsSlim
+                </button>
+                <button onclick="switchProductTab('vietitaly')" id="tab-vietitaly" class="product-tab px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition-all">
+                    5. Ẩm Thực Việt - Ý
+                </button>
+            </div>
+
+            <!-- TAB CONTENT CONTAINER -->
+            <div id="productTabContents">
+
+                <!-- 7.1 Tiệm 4 Chị Em -->
+                <div id="content-tiem4chiem" class="product-content space-y-6">
+                    <div class="bg-gradient-to-r from-red-900 to-navy-900 text-white p-6 sm:p-8 rounded-2xl shadow-md flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <span class="text-xs uppercase font-bold tracking-widest text-gold-400">Giải Pháp Ăn Vặt Tiện Lợi</span>
+                            <h3 class="text-2xl font-black text-white mt-1">Tiệm 4 Chị Em</h3>
+                            <p class="text-xs sm:text-sm text-slate-200 mt-1">Tiêu chí chiến lược: Fast - Tasty - Trendy (Nhanh chóng - Ngon miệng - Bắt trend)</p>
+                        </div>
+                        <div class="bg-white/10 border border-white/20 p-3 rounded-xl text-center text-xs">
+                            <span class="block text-gold-300 font-bold">Thông điệp chính</span>
+                            <span class="italic text-white">"Giòn tan đậm sốt – Sảng khoái từng ngụm nước"</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Product 1 -->
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center font-bold text-lg mb-3">
+                                    <i class="fa-solid fa-pepper-hot"></i>
+                                </div>
+                                <h4 class="font-bold text-navy-900 text-base mb-2">Gà Rán Viên Sốt Cay Ngọt</h4>
+                                <p class="text-xs text-slate-600 mb-3">Ức/Đùi gà lóc xương chiên giòn Popcorn style, phủ sốt Yangnyeom truyền thống.</p>
+                                <ul class="text-xs text-slate-500 space-y-1 mb-4">
+                                    <li>• <strong>Hương vị:</strong> Cay nhẹ Gochujang quyện ngọt hậu mật ong.</li>
+                                    <li>• <strong>USP:</strong> Chuẩn vị street-food Hàn Quốc, đỏ bóng ăn ảnh.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-lg mb-3">
+                                    <i class="fa-solid fa-garlic"></i>
+                                </div>
+                                <h4 class="font-bold text-navy-900 text-base mb-2">Gà Rán Viên Sốt Bơ Tỏi</h4>
+                                <p class="text-xs text-slate-600 mb-3">Gà chiên giòn áo sốt bơ thực vật, tỏi phi giòn rụm và rau mùi tây khô.</p>
+                                <ul class="text-xs text-slate-500 space-y-1 mb-4">
+                                    <li>• <strong>Hương vị:</strong> Béo ngậy, thơm lừng bơ tươi, tỏi giòn sần sật.</li>
+                                    <li>• <strong>USP:</strong> Hương vị quốc dân, phù hợp mọi lứa tuổi.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg mb-3">
+                                    <i class="fa-solid fa-whiskey-glass"></i>
+                                </div>
+                                <h4 class="font-bold text-navy-900 text-base mb-2">Nước Ngọt Có Ga Đá Lạnh</h4>
+                                <p class="text-xs text-slate-600 mb-3">Phục vụ ly giấy/nhựa định lượng 350ml - 500ml mát lạnh sảng khoái.</p>
+                                <ul class="text-xs text-slate-500 space-y-1 mb-4">
+                                    <li>• <strong>Hương vị:</strong> Ngọt thanh, bọt ga sảng khoái.</li>
+                                    <li>• <strong>USP:</strong> Trung hòa độ béo của đồ chiên, kích thích vị giác.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7.2 Deadline Kit (6 Dòng Sản Phẩm) -->
+                <div id="content-deadlinekit" class="product-content hidden space-y-6">
+                    <div class="bg-navy-900 text-white p-6 rounded-2xl border border-gold-500/30 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <span class="text-xs uppercase font-bold tracking-widest text-gold-400">Bộ Giải Pháp Học Tập Toàn Diện</span>
+                            <h3 class="text-2xl font-black text-white mt-1">Dự Án Deadline Kit</h3>
+                            <p class="text-xs sm:text-sm text-slate-300 mt-1">Tối ưu hóa thời gian chuẩn bị, đồng hành cùng sinh viên vượt qua áp lực thi cử & deadline.</p>
+                        </div>
+                        <div class="bg-white/10 px-4 py-2 rounded-xl text-xs text-gold-300 font-semibold border border-white/10">
+                            6 Dòng Kit Chiến Lược
+                        </div>
+                    </div>
+
+                    <!-- Interactive Kit Selector Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Kit 1: BASIC -->
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">Hàng Ngày</span>
+                                    <span class="text-lg font-black text-navy-900">55.000 VNĐ</span>
+                                </div>
+                                <h4 class="text-base font-bold text-navy-900 mb-1">1. BASIC KIT</h4>
+                                <p class="text-xs text-slate-500 mb-3">Túi dụng cụ học tập cơ bản</p>
+                                <p class="text-xs text-slate-600 mb-4">Dành cho nhu cầu sử dụng hàng ngày trên lớp.</p>
+                                <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Bút viết & bút nhớ dòng</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Sổ tay ghi chép mini</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Giấy nhớ cơ bản & túi đựng</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Kit 2: EXAM -->
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">Ôn Thi</span>
+                                    <span class="text-lg font-black text-navy-900">89.000 VNĐ</span>
+                                </div>
+                                <h4 class="text-base font-bold text-navy-900 mb-1">2. EXAM KIT</h4>
+                                <p class="text-xs text-slate-500 mb-3">Túi hỗ trợ ôn tập & thi cử</p>
+                                <p class="text-xs text-slate-600 mb-4">Tối ưu cho mùa thi và giai đoạn ôn luyện cao điểm.</p>
+                                <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Sổ tổng hợp kiến thức & Flashcards</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Bộ bút chì / gọt / tẩy chuẩn thi</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Sơ đồ tư duy & Bảng đếm ngược</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Kit 3: NIGHT -->
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-full">Chạy Đêm</span>
+                                    <span class="text-lg font-black text-navy-900">75.000 VNĐ</span>
+                                </div>
+                                <h4 class="text-base font-bold text-navy-900 mb-1">3. NIGHT KIT</h4>
+                                <p class="text-xs text-slate-500 mb-3">Túi hỗ trợ học tập buổi tối</p>
+                                <p class="text-xs text-slate-600 mb-4">Dành riêng cho các buổi "thức đêm cày deadline".</p>
+                                <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Trà tỉnh táo / Kẹo ngậm tỉnh táo</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Đèn mini / Miếng dán mắt thư giãn</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Kẹp tài liệu & Thông điệp xả stress</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Kit 4: PRESENTATION -->
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-bold text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full">Báo Cáo</span>
+                                    <span class="text-lg font-black text-navy-900">79.000 VNĐ</span>
+                                </div>
+                                <h4 class="text-base font-bold text-navy-900 mb-1">4. PRESENTATION KIT</h4>
+                                <p class="text-xs text-slate-500 mb-3">Túi chuẩn bị thuyết trình</p>
+                                <p class="text-xs text-slate-600 mb-4">Hỗ trợ thuyết trình nhóm, báo cáo đề án.</p>
+                                <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Thẻ ghi chú bài nói (Cue cards)</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Bút chỉ / Bút dạ bảng chuyên dụng</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Sơ đồ kịch bản & Kẹp hồ sơ</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Kit 5: FOCUS -->
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-glow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full">Tập Trung</span>
+                                    <span class="text-lg font-black text-navy-900">99.000 VNĐ</span>
+                                </div>
+                                <h4 class="text-base font-bold text-navy-900 mb-1">5. FOCUS KIT</h4>
+                                <p class="text-xs text-slate-500 mb-3">Túi quản lý thời gian & tập trung</p>
+                                <p class="text-xs text-slate-600 mb-4">Tối ưu hiệu suất làm việc, chống xao nhãng.</p>
+                                <ul class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3">
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Đồng hồ / Bảng Pomodoro</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Nến thơm mini / Tinh dầu tập trung</li>
+                                    <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Nút tai chống ồn & Planner</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Kit 6: PREMIUM -->
+                        <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl p-6 border border-gold-500/40 shadow-sm card-glow flex flex-col justify-between relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-gold-500 text-navy-950 font-bold text-[10px] px-3 py-1 rounded-bl-xl uppercase">All-In-One</div>
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-xs font-bold text-gold-700 bg-gold-100 px-2.5 py-1 rounded-full">Cao Cấp</span>
+                                    <span class="text-lg font-black text-navy-900">149.000 VNĐ</span>
+                                </div>
+                                <h4 class="text-base font-bold text-navy-900 mb-1">6. PREMIUM KIT</h4>
+                                <p class="text-xs text-slate-500 mb-3">Túi tổng hợp cao cấp toàn diện</p>
+                                <p class="text-xs text-slate-600 mb-4">Bộ giải pháp đầy đủ nhất cho học sinh, sinh viên.</p>
+                                <ul class="text-xs text-slate-600 space-y-1.5 border-t border-gold-200 pt-3">
+                                    <li><i class="fa-solid fa-star text-gold-500 mr-1.5"></i>Tập hợp đầy đủ công cụ của 5 dòng Kit</li>
+                                    <li><i class="fa-solid fa-star text-gold-500 mr-1.5"></i>Phụ kiện cao cấp & Quà tặng cá nhân hóa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7.3 Ngọc Phỉ Thúy Myanmar -->
+                <div id="content-ngocphithuy" class="product-content hidden space-y-6">
+                    <div class="bg-gradient-to-r from-emerald-900 via-teal-900 to-navy-900 text-white p-6 sm:p-8 rounded-2xl shadow-md border border-emerald-400/30">
+                        <span class="text-xs uppercase font-bold tracking-widest text-emerald-300">Jadeite Myanmar Premium</span>
+                        <h3 class="text-2xl font-black text-white mt-1">Ngọc Phỉ Thúy Myanmar</h3>
+                        <p class="text-xs sm:text-sm text-emerald-100 mt-2 leading-relaxed">
+                            Mệnh danh là "Vua của các loại ngọc", biểu tượng cho sự giàu sang, quyền lực, bình an và vượng khí trường tồn. Mang năng lượng tích cực xua đuổi tà khí và hộ mệnh cho người đeo.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 mx-auto flex items-center justify-center font-bold mb-2">LỤC</div>
+                            <h4 class="font-bold text-navy-900 text-sm">Lục Phỉ</h4>
+                            <p class="text-xs text-slate-500 mt-1">Sắc xanh ngọc lục bảo tượng trưng vượng khí & tài lộc.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-800 mx-auto flex items-center justify-center font-bold mb-2">TỬ</div>
+                            <h4 class="font-bold text-navy-900 text-sm">Tử La Lan</h4>
+                            <p class="text-xs text-slate-500 mt-1">Sắc tím quý phái, thanh cao và bình an tâm hồn.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                            <div class="w-10 h-10 rounded-full bg-rose-100 text-rose-800 mx-auto flex items-center justify-center font-bold mb-2">HỒNG</div>
+                            <h4 class="font-bold text-navy-900 text-sm">Hồng Phỉ</h4>
+                            <p class="text-xs text-slate-500 mt-1">Sắc hồng đỏ ấm áp, thu hút duyên lành & năng lượng tích cực.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 mx-auto flex items-center justify-center font-bold mb-2">HOÀNG</div>
+                            <h4 class="font-bold text-navy-900 text-sm">Hoàng Phỉ</h4>
+                            <p class="text-xs text-slate-500 mt-1">Sắc vàng hoàng gia biểu trưng cho thịnh vượng & uy quyền.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7.4 Gimbap Gạo Lứt Healthy x MsSlim -->
+                <div id="content-kimbap" class="product-content hidden space-y-6">
+                    <div class="bg-emerald-900 text-white p-6 sm:p-8 rounded-2xl border border-gold-500/30 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <span class="text-xs uppercase font-bold tracking-widest text-gold-400">Đồng Hành Cùng MsSlim</span>
+                            <h3 class="text-2xl font-black text-white mt-1">Gimbap Gạo Lứt Healthy</h3>
+                            <p class="text-xs sm:text-sm text-emerald-100 mt-1">Slogan: "Thỏa mãn cơn thèm – Chẳng lo tích mỡ" | Triết lý: "Ăn Hoài Không Mập"</p>
+                        </div>
+                    </div>
+
+                    <!-- Science Highlights Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                            <div class="flex items-center space-x-2 text-navy-900 font-bold text-base">
+                                <i class="fa-solid fa-flask-vial text-emerald-600"></i>
+                                <span>4 Năm – 3 Tiến Sĩ – 2 Quốc Gia</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Nghiên cứu cắt giảm 50% calo tinh bột từ TS. Thavarajah (Sri Lanka/Canada), triết lý thực dưỡng của TS. Hiroki Kotabe (Nhật/Mỹ) và tinh hoa nông sản Việt.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                            <div class="flex items-center space-x-2 text-navy-900 font-bold text-base">
+                                <i class="fa-solid fa-seedling text-emerald-600"></i>
+                                <span>Gạo Lứt Tím Huyền Thoại (TS. Hồ Quang Cua)</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Mỗi kg gạo chứa tới <strong class="text-emerald-700">1.296 mg Anthocyanin</strong> – hoạt chất chống oxy hóa mạnh mẽ giúp trẻ hóa và hỗ trợ phòng ngừa ung thư.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                            <div class="flex items-center space-x-2 text-navy-900 font-bold text-base">
+                                <i class="fa-solid fa-clock-rotate-left text-emerald-600"></i>
+                                <span>Công Nghệ Nấu Chậm 36 Giờ</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Ủ nấu chậm cùng các loại đậu và chiết xuất nấm Shiitake Nhật Bản, giúp hạt cơm dẻo mềm, ngọt vị tự nhiên như cơm trắng nhưng đậm đà giàu chất xơ.
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                            <div class="flex items-center space-x-2 text-navy-900 font-bold text-base">
+                                <i class="fa-solid fa-snowflake text-emerald-600"></i>
+                                <span>Cắt Giảm 50% Calo & Giữ Tươi IQF</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Chuyển hóa tinh bột thành "kháng tinh bột" (hoạt động như chất xơ), không tích tụ thành đường & mỡ thừa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7.5 Ẩm Thực Việt - Ý -->
+                <div id="content-vietitaly" class="product-content hidden space-y-6">
+                    <div class="bg-gradient-to-r from-red-800 via-rose-900 to-emerald-900 text-white p-6 sm:p-8 rounded-2xl shadow-md">
+                        <span class="text-xs uppercase font-bold tracking-widest text-gold-300">Không Gian Giao Lưu Văn Hóa</span>
+                        <h3 class="text-2xl font-black text-white mt-1">Gian Hàng Ẩm Thực Việt – Ý</h3>
+                        <p class="text-xs sm:text-sm text-slate-200 mt-1">Sáng 26/10/2026 – Nhóm 1 | Thông điệp: "Đậm đà vị Ý – Mát lành vị Việt"</p>
+                    </div>
+
+                    <!-- Menu Table -->
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs sm:text-sm">
+                                <thead class="bg-navy-900 text-white font-bold">
+                                    <tr>
+                                        <th class="p-4">Món Ăn / Thức Uống</th>
+                                        <th class="p-4">Mục Đích Chọn Món & Ý Nghĩa Văn Hóa</th>
+                                        <th class="p-4 text-right">Giá Bán</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 text-slate-700">
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="p-4 font-bold text-navy-900">Mỳ sốt cà kiểu Ý</td>
+                                        <td class="p-4">Mì Việt Nam kết hợp sốt cà chua phong cách Ý, tạo sự giao thoa ẩm thực Đông – Tây.</td>
+                                        <td class="p-4 text-right font-extrabold text-navy-900">25.000đ</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50">
+                                        <td class="p-4 font-bold text-navy-900">Nước sâm Việt</td>
+                                        <td class="p-4">Thức uống dân dã, thanh mát đậm nét văn hóa ẩm thực truyền thống Việt Nam.</td>
+                                        <td class="p-4 text-right font-extrabold text-navy-900">7.000đ</td>
+                                    </tr>
+                                    <tr class="bg-gold-50/50 hover:bg-gold-50 font-bold">
+                                        <td class="p-4 text-navy-900">Combo Mỳ + Nước Sâm</td>
+                                        <td class="p-4 text-gold-800"><i class="fa-solid fa-star text-gold-500 mr-1"></i> Trải nghiệm trọn vẹn vị Ý & vị Việt với ưu đãi hấp dẫn!</td>
+                                        <td class="p-4 text-right font-black text-vnred text-base">30.000đ</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 8: TỔNG KẾT -->
+        <section id="conclusion" class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden border border-gold-500/30">
+                <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-gold-500/20 border border-gold-500/40 px-4 py-1.5 rounded-full text-xs font-semibold text-gold-400">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                        <span>Tổng Kết Chiến Lược</span>
+                    </div>
+
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Cầu Nối Chiến Lược Vươn Tầm Hệ Sinh Thái Khởi Nghiệp Toàn Cầu
+                    </h2>
+
+                    <p class="text-xs sm:text-base text-slate-300 leading-relaxed">
+                        Hành trình từ chính sách vĩ mô của Đề án 844, Nghị quyết 57-NQ/TW đến thực tiễn tại gian hàng IR25 Innovation Hub khẳng định sinh viên Quan hệ Quốc tế Lớp D25QHQT02 Trường Đại học Thủ Dầu Một (TDMU) sở hữu đầy đủ thế mạnh về tư duy toàn cầu, khả năng kết nối và giao tiếp đa văn hóa. Chuyển hóa tri thức ngoại giao thành giải pháp thực chiến là tiền đề đưa giá trị sáng tạo người trẻ Việt vươn xa.
+                    </p>
+
+                    <div class="pt-4 flex justify-center">
+                        <button onclick="openFeedbackModal()" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-black px-8 py-3.5 rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 flex items-center space-x-2 text-sm sm:text-base">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Gửi Đóng Góp Ý Kiến Ngay</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-slate-400 py-10 border-t border-navy-900 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center space-x-2 text-white font-bold text-lg">
+                <span class="text-gold-400">IR25</span> INNOVATION HUB
+            </div>
+            <p>Trường Đại học Thủ Dầu Một (TDMU) - Lớp D25QHQT02</p>
+            <p class="text-slate-500">© 2026 IR25 Innovation Hub. Bản quyền thuộc về Nhóm Tác Giả D25QHQT02.</p>
+        </div>
+    </footer>
+
+    <!-- BOTTOM FIXED FEEDBACK PROMPT BAR -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gold-500/30 shadow-2xl py-3 px-4 transition-all duration-300" id="bottomPromptBar">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center space-x-3 text-center sm:text-left">
+                <div class="w-9 h-9 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center flex-shrink-0 font-bold hidden sm:flex">
+                    <i class="fa-regular fa-comments"></i>
+                </div>
+                <div>
+                    <p class="text-xs sm:text-sm font-bold text-navy-900">
+                        Bạn đánh giá như thế nào về Gian hàng IR25 Innovation Hub?
+                    </p>
+                    <p class="text-[11px] text-slate-500">Hãy dành 30 giây gửi ý kiến quý báu để chúng tôi hoàn thiện hơn!</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button onclick="openFeedbackModal()" class="bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs px-5 py-2 rounded-xl border border-gold-500/40 shadow-sm transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-star text-gold-400 mr-1.5"></i>Gửi Đánh Giá
+                </button>
+                <button onclick="dismissBottomBar()" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg" title="Ẩn thông báo">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEEDBACK MODAL FORM -->
+    <div id="feedbackModal" class="fixed inset-0 z-50 bg-navy-950/70 backdrop-blur-sm flex items-center justify-center p-4 hidden transition-all">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in duration-200">
+            <!-- Close Button -->
+            <button onclick="closeFeedbackModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 p-2 rounded-full hover:bg-slate-100 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center space-y-2 mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-gold-100 text-gold-700 mx-auto flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy-900">Đóng Góp Ý Kiến Cho IR25</h3>
+                <p class="text-xs text-slate-500">Ý kiến của bạn là động lực rất lớn đối với sinh viên QHQT TDMU</p>
+            </div>
+
+            <!-- Modal Form -->
+            <form id="feedbackForm" onsubmit="handleFeedbackSubmit(event)" class="space-y-4">
+                <!-- Star Rating -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-2 text-center">Đánh Giá Tổng Thể</label>
+                    <div class="flex justify-center space-x-2 text-2xl text-slate-300" id="starRatingContainer">
+                        <i class="fa-solid fa-star cursor-pointer hover:text-gold-500 transition-colors star-icon" onclick="setRating(1)"></i>
+                        <i class="fa-solid fa-star cursor-pointer hover:text-gold-500 transition-colors star-icon" onclick="setRating(2)"></i>
+                        <i class="fa-solid fa-star cursor-pointer hover:text-gold-500 transition-colors star-icon" onclick="setRating(3)"></i>
+                        <i class="fa-solid fa-star cursor-pointer hover:text-gold-500 transition-colors star-icon" onclick="setRating(4)"></i>
+                        <i class="fa-solid fa-star cursor-pointer hover:text-gold-500 transition-colors star-icon" onclick="setRating(5)"></i>
+                    </div>
+                    <input type="hidden" id="selectedRating" value="5">
+                </div>
+
+                <!-- Topic Selector -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Chủ Đề Quan Tâm</label>
+                    <select id="feedbackTopic" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-navy-900">
+                        <option value="Sản Phẩm Gian Hàng">Sản Phẩm Gian Hàng (Deadline Kit, Gimbap, Gà Rán...)</option>
+                        <option value="Nội Dung & Chính Sách">Nội Dung Bài Viết & Chính Sách Khởi Nghiệp</option>
+                        <option value="Trải Nghiệm Giao Diện">Trải Nghiệm Giao Diện Website</option>
+                        <option value="Đóng Góp Khác">Đóng Góp Ý Kiến Khác</option>
+                    </select>
+                </div>
+
+                <!-- Inputs: Name & Email -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Họ và Tên</label>
+                        <input type="text" id="feedbackName" required placeholder="Nguyễn Văn A" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-navy-900">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Email / SĐT</label>
+                        <input type="text" id="feedbackContact" required placeholder="email@example.com" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-navy-900">
+                    </div>
+                </div>
+
+                <!-- Comment Textarea -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nội Dung Phản Hồi / Nhận Xét</label>
+                    <textarea id="feedbackComment" rows="3" required placeholder="Chia sẻ cảm nghĩ hoặc góp ý chi tiết của bạn..." class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-navy-900 resize-none"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 rounded-xl text-xs sm:text-sm shadow-md transition-all border border-gold-500/30 flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-paper-plane text-gold-400"></i>
+                    <span>Gửi Ý Kiến Ngay</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed top-24 right-4 z-50 bg-navy-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-gold-500/40 flex items-center space-x-3 transform translate-x-full transition-transform duration-300">
+        <div class="w-8 h-8 rounded-full bg-gold-500 text-navy-950 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <p class="text-xs font-bold text-white">Gửi phản hồi thành công!</p>
+            <p class="text-[11px] text-slate-300">Cảm ơn bạn đã đóng góp ý kiến cho IR25 Innovation Hub.</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Navigation Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
+
+        // Filter Student Ideas Function
+        function filterIdeas(category) {
+            const cards = document.querySelectorAll('.idea-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-navy-900', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+
+            event.target.classList.add('active', 'bg-navy-900', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-700');
+
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Search Student Ideas Function
+        function searchIdeas() {
+            const query = document.getElementById('searchIdeaInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.idea-card');
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Switch Product Tabs
+        function switchProductTab(tabKey) {
+            const tabs = document.querySelectorAll('.product-tab');
+            const contents = document.querySelectorAll('.product-content');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-navy-900', 'text-white');
+                tab.classList.add('bg-white', 'text-slate-600');
+            });
+
+            contents.forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            const activeTab = document.getElementById(`tab-${tabKey}`);
+            const activeContent = document.getElementById(`content-${tabKey}`);
+
+            if (activeTab && activeContent) {
+                activeTab.classList.add('bg-navy-900', 'text-white');
+                activeTab.classList.remove('bg-white', 'text-slate-600');
+                activeContent.classList.remove('hidden');
+            }
+        }
+
+        // Feedback Modal Controls
+        function openFeedbackModal() {
+            document.getElementById('feedbackModal').classList.remove('hidden');
+        }
+
+        function closeFeedbackModal() {
+            document.getElementById('feedbackModal').classList.add('hidden');
+        }
+
+        function dismissBottomBar() {
+            document.getElementById('bottomPromptBar').style.display = 'none';
+        }
+
+        // Star Rating Selection Logic
+        let currentRating = 5;
+        function setRating(rating) {
+            currentRating = rating;
+            document.getElementById('selectedRating').value = rating;
+            const stars = document.querySelectorAll('.star-icon');
+
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('text-gold-500');
+                    star.classList.remove('text-slate-300');
+                } else {
+                    star.classList.remove('text-gold-500');
+                    star.classList.add('text-slate-300');
+                }
+            });
+        }
+        // Initialize default rating stars
+        setRating(5);
+
+        // Handle Form Submission & LocalStorage Save
+        function handleFeedbackSubmit(e) {
+            e.preventDefault();
+
+            const feedbackData = {
+                rating: currentRating,
+                topic: document.getElementById('feedbackTopic').value,
+                name: document.getElementById('feedbackName').value,
+                contact: document.getElementById('feedbackContact').value,
+                comment: document.getElementById('feedbackComment').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Store in LocalStorage
+            let savedFeedbacks = JSON.parse(localStorage.getItem('ir25_feedbacks') || '[]');
+            savedFeedbacks.push(feedbackData);
+            localStorage.setItem('ir25_feedbacks', JSON.stringify(savedFeedbacks));
+
+            // Close Modal & Reset Form
+            closeFeedbackModal();
+            document.getElementById('feedbackForm').reset();
+            setRating(5);
+
+            // Show Toast
+            showToast();
+        }
+
+        // Toast Notification Trigger
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-x-full');
+            setTimeout(() => {
+                toast.classList.add('translate-x-full');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
